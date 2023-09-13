@@ -1,0 +1,23 @@
+.expenseItem {
+    display: flex;
+    justify-content: space-between;
+    background: goldenrod;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+    color: brown;
+    font-size: 1.4rem;
+    align-items: center;
+    gap: 2rem;
+}
+
+.title {
+    margin-right: auto;
+}
+
+.amount {
+    background: firebrick;
+    padding: 10px 15px;
+    color: whitesmoke;
+    border-radius: 10px;
+}
