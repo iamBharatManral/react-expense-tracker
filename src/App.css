@@ -6,6 +6,12 @@
     max-width: 600px;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 header {
     background: darkolivegreen;
     padding: 1rem;
