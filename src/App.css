@@ -1,0 +1,10 @@
+.App {
+    margin: 2rem;
+}
+
+header {
+    background: papayawhip;
+    padding: 1rem;
+    color: brown;
+    border-radius: 10px;
+}
