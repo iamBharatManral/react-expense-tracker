@@ -3,6 +3,7 @@ import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/Expenses/NewExpense/NewExpense";
 import {useState} from "react";
 import ExpenseFilter from "./components/Expenses/ExpenseFilter/ExpenseFilter";
+import github from './assets/images/github.svg'
 
 const initialExpenses = [
     {
@@ -39,7 +40,9 @@ function App() {
     return (
         <div className="App">
             <header>
-                <h1>Expense Tracker</h1>
+                <h1>Expense Tracker <a href="https://github.com/iamBharatManral/react-expense-tracker" target={"_blank"}
+                                       rel="noreferrer"><img
+                    src={github} alt="github"/></a></h1>
             </header>
             <main>
                 <NewExpense addNewExpense={addNewExpense}/>
