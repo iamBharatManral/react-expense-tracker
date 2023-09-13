@@ -13,6 +13,10 @@
 
 .title {
     margin-right: auto;
+    text-align: right;
+    font-size: 1.5rem;
+    text-overflow: ellipsis;
+    color: black;
 }
 
 .amount {
@@ -20,4 +24,23 @@
     padding: 10px 15px;
     color: whitesmoke;
     border-radius: 10px;
+    width: 100px;
+}
+
+.date {
+    background: wheat;
+    padding: 8px;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    width: 100px;
+}
+
+.month {
+    color: black;
+}
+
+.day {
+    font-size: 2rem;
 }
