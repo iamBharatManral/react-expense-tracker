@@ -35,16 +35,16 @@ function ExpenseForm({addNewExpense}) {
     return (visible ? <form className={"expenseForm"} onSubmit={submit}>
         <div className="control">
             <label htmlFor="title">Title</label>
-            <input type="text" id={"title"} onChange={changeTitle} value={title}/>
+            <input type="text" id={"title"} onChange={changeTitle} value={title} required={true}/>
         </div>
         <div className="control">
             <label htmlFor="amount">Amount</label>
-            <input type="number" id={"amount"} min={"0.1"} value={amount} onChange={changeAmount}/>
+            <input type="number" id={"amount"} min={"0.1"} value={amount} onChange={changeAmount} required={true}/>
         </div>
         <div className="control">
             <label htmlFor="date">Date</label>
             <input type="date" id={"date"} min={"2021-01-01"} max={"2023-12-31"} value={date}
-                   onChange={changeDate}/>
+                   onChange={changeDate} required={true}/>
         </div>
         <div className="btnGroup">
             <div className="submit">
