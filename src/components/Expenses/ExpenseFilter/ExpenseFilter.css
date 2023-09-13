@@ -1,0 +1,42 @@
+.expenseFilter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.months {
+    display: flex;
+    justify-content: space-between;
+}
+
+.month {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+select {
+    width: 100px;
+    padding: 5px;
+    color: green;
+    border: 1px solid brown;
+    background: navajowhite;
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+.month__value {
+    width: 15px;
+    height: 200px;
+    background-color: navajowhite;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}

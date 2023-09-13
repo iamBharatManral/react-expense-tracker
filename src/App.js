@@ -2,6 +2,7 @@ import './App.css';
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/Expenses/NewExpense/NewExpense";
 import {useState} from "react";
+import ExpenseFilter from "./components/Expenses/ExpenseFilter/ExpenseFilter";
 
 const initialExpenses = [
     {
@@ -41,6 +42,7 @@ function App() {
             </header>
             <main>
                 <NewExpense addNewExpense={addNewExpense}/>
+                <ExpenseFilter/>
                 <Expenses expenses={expenses}/>
             </main>
         </div>
