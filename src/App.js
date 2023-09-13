@@ -28,13 +28,14 @@ const initialExpenses = [
 
 function App() {
     const [expenses, setExpenses] = useState(initialExpenses)
+    const [filteredYear, setFilteredYear] = useState(new Date().getFullYear())
 
     const addNewExpense = (expense) => {
         expense.id = `e-${expenses.length + 1}`
-        console.log(expense)
-        setExpenses((prev) => ([...prev, expense]))
+        setExpenses((prev) => ([expense, ...prev]))
     }
-
+    const changeFilteredYear = (year) => setFilteredYear(year)
+    const monthsForExpenses = expenses.filter(expense => expense.date.getFullYear() === +filteredYear).map((expense) => expense.date.getMonth())
     return (
         <div className="App">
             <header>
@@ -42,8 +43,9 @@ function App() {
             </header>
             <main>
                 <NewExpense addNewExpense={addNewExpense}/>
-                <ExpenseFilter/>
-                <Expenses expenses={expenses}/>
+                <ExpenseFilter filteredYear={filteredYear} changeFilteredYear={changeFilteredYear}
+                               monthsForExpenses={monthsForExpenses}/>
+                <Expenses filteredYear={filteredYear} expenses={expenses}/>
             </main>
         </div>
     );

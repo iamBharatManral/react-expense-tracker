@@ -29,6 +29,14 @@ input {
     width: 60%;
 }
 
+.btnGroup {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
 button {
     padding: 10px 15px;
     border-radius: 10px;

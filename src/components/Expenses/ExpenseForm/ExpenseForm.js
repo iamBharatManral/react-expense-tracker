@@ -5,9 +5,20 @@ function ExpenseForm({addNewExpense}) {
     const [title, setTitle] = useState("")
     const [date, setDate] = useState("")
     const [amount, setAmount] = useState("")
+    const [visible, setVisible] = useState(false)
+
     const changeTitle = (e) => setTitle(e.target.value)
     const changeAmount = (e) => setAmount(e.target.value)
     const changeDate = (e) => setDate(e.target.value)
+    const clearForm = () => {
+        setTitle("")
+        setDate("")
+        setAmount("")
+    }
+    const toggleForm = () => {
+        setVisible(prev => !prev)
+        clearForm()
+    }
 
     const submit = (e) => {
         e.preventDefault()
@@ -16,32 +27,34 @@ function ExpenseForm({addNewExpense}) {
             date: new Date(date),
             amount
         }
-        setTitle("")
-        setDate("")
-        setAmount("")
+        clearForm()
         addNewExpense(newExpense)
     }
 
-    return (
-        <form className={"expenseForm"} onSubmit={submit}>
-            <div className="control">
-                <label htmlFor="title">Title</label>
-                <input type="text" id={"title"} onChange={changeTitle} value={title}/>
-            </div>
-            <div className="control">
-                <label htmlFor="amount">Amount</label>
-                <input type="number" id={"amount"} min={"0.1"} value={amount} onChange={changeAmount}/>
-            </div>
-            <div className="control">
-                <label htmlFor="date">Date</label>
-                <input type="date" id={"date"} min={"2021-01-01"} max={"2023-12-31"} value={date}
-                       onChange={changeDate}/>
-            </div>
+
+    return (visible ? <form className={"expenseForm"} onSubmit={submit}>
+        <div className="control">
+            <label htmlFor="title">Title</label>
+            <input type="text" id={"title"} onChange={changeTitle} value={title}/>
+        </div>
+        <div className="control">
+            <label htmlFor="amount">Amount</label>
+            <input type="number" id={"amount"} min={"0.1"} value={amount} onChange={changeAmount}/>
+        </div>
+        <div className="control">
+            <label htmlFor="date">Date</label>
+            <input type="date" id={"date"} min={"2021-01-01"} max={"2023-12-31"} value={date}
+                   onChange={changeDate}/>
+        </div>
+        <div className="btnGroup">
             <div className="submit">
                 <button type={"submit"}>Add Expense</button>
             </div>
-        </form>
-    );
+            <div className="cancel">
+                <button type={"button"} onClick={toggleForm}>Cancel</button>
+            </div>
+        </div>
+    </form> : <button onClick={toggleForm}>Add New Expense</button>)
 }
 
 export default ExpenseForm;

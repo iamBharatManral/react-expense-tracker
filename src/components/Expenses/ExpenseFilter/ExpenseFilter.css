@@ -27,8 +27,9 @@ select {
     width: 100px;
     padding: 5px;
     color: green;
-    border: 1px solid brown;
+    border: 2px solid darkred;
     background: navajowhite;
+    border-radius: 5px;
     font-size: 1rem;
     font-weight: bolder;
 }
@@ -39,4 +40,9 @@ select {
     background-color: navajowhite;
     border: 1px solid #ccc;
     border-radius: 10px;
+}
+
+
+.hasExpenses {
+    background: brown;
 }
